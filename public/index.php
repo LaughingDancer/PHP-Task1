@@ -10,7 +10,11 @@ $firstFloorSeat = 1;
 $secondFloorSeat = 2;
 $thirdFloorSeat = 3;
 
-$seat = new Seat();
+$dsn = 'sqlsrv:Server=MAKSIMN;Database=PHPpractice';
+$user = '';
+$password = '';
+
+$seat = new Seat($dsn, $user, $password);
 $seat->checkSeat($firstFloorSeat, $secondFloorSeat, $thirdFloorSeat, $array);
 
 // Парковка состоит из 3 этажей.
