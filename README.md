@@ -8,10 +8,14 @@ GO
 USE PHPpractice;
 GO
 
-CREATE TABLE CarPark (
-    IDSeat INT IDENTITY(1,1) PRIMARY KEY,
-    SuccessfulParking CHAR(1),
+CREATE TABLE Car (
+    IDCar INT IDENTITY(1,1) PRIMARY KEY,
     VehicleType CHAR(1)
+);
+GO
+CREATE TABLE Result (
+    IDResult INT IDENTITY(1,1) PRIMARY KEY,
+    SuccessfulParking CHAR(1)
 );
 GO
 ```
