@@ -15,7 +15,9 @@ CREATE TABLE Car (
 GO
 CREATE TABLE Result (
     IDResult INT IDENTITY(1,1) PRIMARY KEY,
-    SuccessfulParking CHAR(1)
+    SuccessfulParking CHAR(1),
+    IDCar INT,
+    FOREIGN KEY (IDCar) REFERENCES Car(IDCar)
 );
 GO
 ```
