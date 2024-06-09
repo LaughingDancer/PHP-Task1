@@ -18,9 +18,10 @@ class DataBase
 
 	public function saveResult($successfulParking, $vehicleType)
 	{
-		$stmt = $this->pdo->prepare('INSERT INTO Result (SuccessfulParking) VALUES (:successfulParking)');
-		$stmt->execute(['successfulParking' => $successfulParking]);
 		$stmt = $this->pdo->prepare('INSERT INTO Car (VehicleType) VALUES (:vehicleType)');
 		$stmt->execute(['vehicleType' => $vehicleType]);
+		$lastCarId = $this->pdo->lastInsertId();
+		$stmt = $this->pdo->prepare('INSERT INTO Result (SuccessfulParking, IDCar) VALUES (:successfulParking, :idCar)');
+		$stmt->execute(['successfulParking' => $successfulParking, ':idCar' => $lastCarId]);
 	}
 }
