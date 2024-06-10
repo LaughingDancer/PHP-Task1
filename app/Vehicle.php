@@ -2,11 +2,7 @@
 
 namespace App;
 
-enum VehicleType: string
-{
-	case Car = 'c';
-	case Truck = 't';
-}
+use App\Enums\VehicleType;
 
 class Vehicle
 {

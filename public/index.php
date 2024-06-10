@@ -2,7 +2,7 @@
 
 use App\Seat;
 
-require_once("../vendor/autoload.php");
+include "../vendor/autoload.php";
 
 $array = ['c', 'c', 'c', 't', 't', 'c', 'c', 'c'];
 

@@ -6,7 +6,7 @@ class DataBase
 {
 	private $pdo;
 
-	public function __construct($dsn, $user, $password)
+	public function __construct(string $dsn, string $user, string $password)
 	{
 		try {
 			$this->pdo = new \PDO($dsn, $user, $password);
@@ -16,7 +16,7 @@ class DataBase
 		}
 	}
 
-	public function saveResult($successfulParking, $vehicleType)
+	public function saveResult(string $successfulParking, string $vehicleType)
 	{
 		$stmt = $this->pdo->prepare('INSERT INTO Car (VehicleType) VALUES (:vehicleType)');
 		$stmt->execute(['vehicleType' => $vehicleType]);

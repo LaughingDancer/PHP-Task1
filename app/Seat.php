@@ -2,14 +2,16 @@
 
 namespace App;
 
+use App\Enums\VehicleType;
+
 require_once 'Vehicle.php';
 require_once 'Database.php';
-
+require_once 'Enums/VehicleTypeEmun.php';
 class Seat
 {
 	private $db;
 
-	public function __construct($dsn, $user, $password)
+	public function __construct(string $dsn, string $user, string $password)
 	{
 		$this->db = new DataBase($dsn, $user, $password);
 	}
